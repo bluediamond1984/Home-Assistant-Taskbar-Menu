@@ -27,8 +27,10 @@ namespace Home_Assistant_Taskbar_Menu.Connection
             {
                 {"entity_id", stateObject.EntityId}
             };
-            foreach (var (parameter, value) in data)
+            foreach (Tuple<string, object> tuple in data)
             {
+                string parameter = tuple.Item1;
+                object value = tuple.Item2;
                 serviceData[parameter] = value;
             }
 
